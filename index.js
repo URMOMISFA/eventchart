@@ -29,6 +29,10 @@ app.use('/api/events', require('./routes/events'));
 app.use('/api/bets', require('./routes/bets'));
 app.use('/api/users', require('./routes/users'));
 
+app.get('/', (req, res) => {
+  res.json({ success: true, message: 'Backend is running. Use /api/* endpoints.' });
+});
+
 // Socket.io for real-time chat
 io.on('connection', (socket) => {
   console.log('User connected:', socket.id);

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EventChart</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>EventChart</h1>
+      <p>Prediction betting demo running as a static GitHub Pages app.</p>
+      <p class="note">No backend required for this demo. Bets and chat are stored locally in your browser.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Active Events</h2>
+        <button id="newEventBtn" class="primary">Create Event</button>
+      </div>
+      <div id="eventList" class="event-list"></div>
+    </section>
+
+    <section class="panel" id="detailPanel">
+      <h2>Event Details</h2>
+      <div id="eventDetail" class="event-detail empty">Select an event to view details and chat.</div>
+    </section>
+  </main>
+
+  <dialog id="eventDialog" class="dialog">
+    <form method="dialog" id="eventForm">
+      <h3>Create New Event</h3>
+      <label>
+        Event title
+        <input type="text" id="eventTitle" required maxlength="80" />
+      </label>
+      <label>
+        Description
+        <textarea id="eventDescription" rows="4" required maxlength="240"></textarea>
+      </label>
+      <div class="dialog-actions">
+        <button type="button" id="cancelEvent" class="secondary">Cancel</button>
+        <button type="submit" class="primary">Create</button>
+      </div>
+    </form>
+  </dialog>
+
+  <template id="eventTemplate">
+    <article class="event-card">
+      <strong class="event-title"></strong>
+      <p class="event-meta"></p>
+      <div class="event-actions">
+        <button class="selectBtn">View</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

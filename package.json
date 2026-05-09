@@ -1,15 +1,22 @@
 {
   "name": "new-folder",
   "version": "1.0.0",
-  "description": "",
+  "description": "Prediction betting app backend with a GitHub Pages demo frontend.",
+  "homepage": "https://urmomisfa.github.io/eventchart",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
     "client": "npm start --prefix client",
-    "dev:full": "concurrently \"npm run dev\" \"npm run client\""
+    "dev:full": "concurrently \"npm run dev\" \"npm run client\"",
+    "serve:docs": "npx serve docs",
+    "deploy": "echo 'Set GitHub Pages source to the docs/ folder in repo settings.'"
   },
-  "keywords": [],
+  "keywords": [
+    "github-pages",
+    "prediction",
+    "betting"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
